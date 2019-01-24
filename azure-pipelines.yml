@@ -1,0 +1,12 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  image_name: 'omtinez/android-dev'
+
+steps:
+- script: docker build -f Dockerfile -t $(image_name) .
+  displayName: 'docker build'
